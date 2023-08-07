@@ -8,16 +8,16 @@ public:
         return a[1]<b[1];
     }
     int eraseOverlapIntervals(vector<vector<int>>& intervals) {
-        int prev=-1e6,cnt=0;
+        int prev=-1e6,delete_cnt=0;
         sort(intervals.begin(),intervals.end(),customSort);
         for(vector<int> it:intervals){
             if(it[0]>=prev){
                 prev=it[1];
             }
             else{
-                cnt++;
+                delete_cnt++;
             }
         }
-        return cnt;
+        return delete_cnt;
     }
 };
